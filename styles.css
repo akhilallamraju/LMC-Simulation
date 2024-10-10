@@ -3,13 +3,69 @@
     padding: 0;
 }
 
-body {
+main {
     background-color: #467750;
-    /* Required for proper scaling of the background image */
+    /* Extends the 'main' element to the 100% of the viewport's width & height.
+       (Viewport: the area of the webpage viewable by the user when the webpage is loaded).
+       Required for proper scaling of the background image. */
     height: 100vh;
     width: 100vw;
 }
 
 .bg {
+    /* Makes the image translucent. */
     opacity: 0.1;
+}
+
+.landing-page-title {
+    /* Allows the heading to overlap the background. */
+    position: absolute;
+    /* Hacky method but it works without issue.
+       CSS moves elements by their top-left corner, not their centre.
+       Therefore, to properly align elements, half of the element's width & height must be subtracted from the movement. 
+       This is achieved using the translate function.
+       The -ve %page means that the element would be transformed up & left rather than down & right
+       (Webpage coordinates start from the top-right corner so transformations woulf be down & right by default). */
+    top: 30vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    /* 'rem' is a unit that is based on the font size of the parent element.
+       In this case, the font size would be 4x the size of the 'main' element's default font size. */
+    font-size: 4rem;
+
+    color: #f0cd6e;
+}
+
+.btn-default {
+    position: absolute;
+    /* The colour-inversion effect when hovering over the button is set to last for 0.25s. */
+    transition-duration: 0.25s;
+    /* Button design choices to match that of my design in the documentation*/
+    width: 15rem;
+    height: 3rem;
+    background-color: transparent;
+    color: #f0cd6e;
+    border: 0.1rem solid #f0cd6e;
+    border-radius: 0.75rem;
+}
+
+/* Triggers when buttons belonging to the 'btn-default' class are hovered over. */
+.btn-default:hover {
+    /* Inverts the text/outline & background colours as per the design in the documentation. */
+    background-color: #f0cd6e;
+    color: #467750;
+}
+
+button#to-log-in {
+    /* Same transformation trick as in the 'landing-page-title' class */
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+}
+
+button#to-sim {
+    /* Same transformation trick as in the 'landing-page-title' class */
+    top: 60vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
 }
