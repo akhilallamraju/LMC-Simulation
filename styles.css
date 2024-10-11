@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+html {
+    /**/
+    overflow: hidden;
+}
+
 main {
     background-color: #467750;
     /* Extends the 'main' element to the 100% of the viewport's width & height.
@@ -17,7 +22,15 @@ main {
     opacity: 0.1;
 }
 
-.landing-page-title {
+.title {
+    /* 'rem' is a unit that is based on the font size of the parent element.
+       In this case, the font size would be 4x the size of the 'main' element's default font size. */
+    font-size: 4rem;
+
+    color: #f0cd6e;
+}
+
+#lnd-pg-title {
     /* Allows the heading to overlap the background. */
     position: absolute;
     /* Hacky method but it works without issue.
@@ -29,11 +42,19 @@ main {
     top: 30vh;
     left: 50vw;
     transform: translate(-50%, -50%);
-    /* 'rem' is a unit that is based on the font size of the parent element.
-       In this case, the font size would be 4x the size of the 'main' element's default font size. */
-    font-size: 4rem;
+}
+
+#lnd-pg-subtitle {
+    /* Allows the heading to overlap the background. */
+    position: absolute;
+    /* Same transformation trick */
+    top: 37.5vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
 
     color: #f0cd6e;
+    /* Removes the bold effect from the subheading. */
+    font-weight: normal;
 }
 
 .btn-default {
@@ -47,6 +68,7 @@ main {
     color: #f0cd6e;
     border: 0.1rem solid #f0cd6e;
     border-radius: 0.75rem;
+    font-size: 1.1rem;
 }
 
 /* Triggers when buttons belonging to the 'btn-default' class are hovered over. */
@@ -68,4 +90,36 @@ button#to-sim {
     top: 60vh;
     left: 50vw;
     transform: translate(-50%, -50%);
+}
+
+.mobile-device-warning {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    color: #e0e8e2;
+}
+
+#mobile-device-warning {
+    position: absolute;
+    top: 0;
+    color: #e0e8e2;
+}
+
+footer {
+    /* Places the element relative to the viewport, ignoring all other elements on the page.
+       Allows the footer to overlap the main part of the page and stay at the bottom of the screen. */
+    position: fixed;
+    background-color: rgb(255 255 255 / 10%);
+    backdrop-filter: blur(0.2rem);
+    
+    /* Vertically centres text by setting the height of one line of text to the same as the height of the footer.
+       (Text is printed in the centre of each line) */
+    line-height: 5vh;
+
+    width: 100vw;
+    height: 5vh;
+    bottom: 0;
+    color: #e0e8e2;
+    text-align: center;
 }

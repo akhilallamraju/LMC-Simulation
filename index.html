@@ -8,14 +8,21 @@
         <title>LMC Simulation by Akhil Allamraju</title>
     </head>
     <body>
+        <header>
+            <!-- Based on my stakeholder survey, mobile & tablet is unnecessary -->
+            <p id="mobile-device-warning">This simulation may not work as intended in mobile & tablet devices!</p>
+        </header>
         <main>
             <!-- Webpage backgound image -->
             <img class="bg" 
                  src="images/BgLandingPage.png" alt="Background Image - An image of a CPU."
-                 height="100%" width="100%"/>
+                 height="100%" width="100%"
+            />
 
             <!-- Criterion 5: 'Clear Title with Big Text'-->
-            <h1 class="landing-page-title">The Little Man Computer</h1>
+            <h1 class="title" id="lnd-pg-title">The Little Man Computer</h1>
+            <br>
+            <h3 id="lnd-pg-subtitle">Based on the OCR A-Level Computer Science Specification</h3>
 
             <!-- Criterion 7: 'Button that leads to the login and registration page' -->
             <button class="btn-default" id="to-log-in" type="button">Log In or Register</button>
@@ -23,5 +30,8 @@
             <!-- Criterion 6: 'Button that leads to the simulation page' -->
             <button class="btn-default" id="to-sim" type="button">Proceed to Simulation</button>  
         </main>
+        <footer>
+            <p>Copyright &copy; 2024 Akhil Allamraju</p>
+        </footer>
     </body>
 </html>
